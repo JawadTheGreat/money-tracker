@@ -7,6 +7,38 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="app-header">Money Tracker</h1>
+    <div class="container">
+      <h1 class="app-header">Money Tracker</h1>
+      <div class="total-balance">
+        <h3>YOUR BALANCE</h3>
+        <h2 class="balance">$0.00</h2>
+      </div>
+      <div class="income-expense">
+        <div class="income">
+          <h3>INCOME</h3>
+          <h3 class="total-income">$0.00</h3>
+        </div>
+        <div class="expense">
+          <h3>EXPENSE</h3>
+          <h3 class="total-expense">$0.00</h3>
+        </div>
+      </div>
+      <div class="history">
+        <h3>History</h3>
+        <div class="transaction-history">
+          <button type="button" class="delete-btn">&#10005;</button>
+          <p class="transaction-title">Food</p>
+          <p class="transaction-price">$120</p>
+        </div>
+      </div>
+      <form id="form">
+        <h3>Add new transaction</h3>
+        <label>Text</label>
+        <input type="text" placeholder="Enter text..." />
+        <label>Amount <br />(negative-expense, positive-income)</label>
+        <input type="number" placeholder="Enter amount..." />
+        <button type="button" class="submit-btn">Add transaction</button>
+      </form>
+    </div>
   </body>
 </html>
