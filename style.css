@@ -16,7 +16,7 @@ body {
 
 .container {
   max-width: 25em;
-  margin: 10em auto;
+  margin: 3em auto;
 }
 
 .app-header {
@@ -77,15 +77,22 @@ body {
   padding: 0.7em;
   margin: 1em 0;
   box-shadow: var(--box-shadow);
-  border-right: 5px solid #00d524;
   background-color: #fff;
+  list-style: none;
 }
 
 .transaction-history:hover {
   .delete-btn {
     opacity: 1;
-    transition: 1s;
   }
+}
+
+.plus {
+  border-right: 5px solid #00d524;
+}
+
+.minus {
+  border-right: 5px solid red;
 }
 
 .delete-btn {
@@ -99,6 +106,7 @@ body {
   border: none;
   cursor: pointer;
   opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 #form > h3 {
@@ -135,4 +143,5 @@ body {
   color: #fff;
   border: none;
   font-weight: 500;
+  cursor: pointer;
 }
