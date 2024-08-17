@@ -2,16 +2,18 @@ let balance = document.querySelector(".balance");
 let totalIncome = document.querySelector(".total-income");
 let totalExpense = document.querySelector(".total-expense");
 let list = document.querySelector(".list");
-
 let form = document.querySelector("#form");
 let text = document.querySelector("#text");
 let amount = document.querySelector("#amount");
 
+// fetch json array from localStorage and convert to normal js array
 let localStorageTransactions = JSON.parse(localStorage.getItem("transactions"));
 
+// transactions is an array
 let transactions =
   localStorage.getItem("transactions") !== null ? localStorageTransactions : [];
 
+// this function is called when add transaction button/ enter(key in keyboard) is clicked
 function addTransaction(e) {
   e.preventDefault();
 
@@ -28,15 +30,17 @@ function addTransaction(e) {
     addTransactionDOM(transaction);
     updateValues();
     updateLocalStorage();
+    text.value = "";
+    amount.value = "";
   }
-  text.value = "";
-  amount.value = "";
 }
 
+// this function is used to generate random id for each transaction object
 function generateID() {
   return Math.round(Math.random() * 100000000);
 }
 
+// this function is used to show transactions in the history section
 function addTransactionDOM(transaction) {
   let sign = transaction.amount < 0 ? "-" : "+";
 
@@ -58,7 +62,6 @@ function addTransactionDOM(transaction) {
 function removeItem(id) {
   transactions = transactions.filter((transaction) => transaction.id !== id);
   updateLocalStorage();
-
   initializeApp();
 }
 
